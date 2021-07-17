@@ -1,7 +1,7 @@
 import cv2 as cv
 import sys
 
-s = 0
+s = 0 # for a webcam
 
 if len(sys.argv)>1:
     s = sys.argv[1]
@@ -9,6 +9,9 @@ if len(sys.argv)>1:
 haar_face = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 source = cv.VideoCapture(s)
+
+# source = cv.VideoCapture("link to the video")  # for a pre-recorded video
+
 window_width, window_height = int(source.get(3)), int(source.get(4))
 
 playing = True
